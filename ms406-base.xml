@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+     <splash-texture>Aircraft/MS-406/ms406-splash.png</splash-texture>
+    </startup>
+
+    <systems>
+      <electrical>
+        <path>Aircraft/j3cub/cub-electrical.xml</path>
+      </electrical>
+    </systems> 
+
+    <sound>
+      <path>Aircraft/MS-406/Sounds/ms406-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/MS-406/Models/ms406.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/MS-406/Models/Effects/submodels.xml</path>
+    </submodels>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Morane-Saulnier MS.406</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>e</name>
+        <desc>Guns fire</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/ms406-menu.xml"/>
+
+  </sim>
+
+  <yasim>
+    <vg33>
+      <pilot-lb>180</pilot-lb>
+    </vg33>
+  </yasim>
+
+  <engines>
+    <engine>
+      <rpm type="double">700</rpm>
+    </engine>
+  </engines>
+
+  <input>
+    <keyboard include="Nasal/ms406-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <vg33>
+      <file>Aircraft/MS-406/Nasal/doors.nas</file>
+      <file>Aircraft/MS-406/Nasal/immat.nas</file>
+      <file>Aircraft/MS-406/Nasal/liveries.nas</file>
+      <file>Aircraft/MS-406/Nasal/light.nas</file>
+    </vg33>
+    <guns>
+      <file>Aircraft/MS-406/Nasal/weapons.nas</file>
+      <file>Aircraft/MS-406/Nasal/revi.nas</file>
+    </guns>
+  </nasal>
+
+</PropertyList>
+
