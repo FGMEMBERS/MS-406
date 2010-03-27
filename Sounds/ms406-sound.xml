@@ -6,7 +6,7 @@
 
     <crank> 
       <name>engstart</name>
-      <path>Sounds/engstart.wav</path>
+      <path>Aircraft/MS-406/Sounds/start.wav</path>
       <property>/engines/engine/cranking</property>
       <volume> 
         <property>/orientation/alpha-deg</property>
@@ -43,7 +43,7 @@
     <engine> 
       <name>engine idle rpm</name>
       <mode>looped</mode>
-      <path>Aircraft/Arsenal-VG33/Sounds/merlin_rpm1.wav</path>
+      <path>Aircraft/MS-406/Sounds/rpm-low.wav</path>
       <condition> 
         <property>/engines/engine/running</property>
        <less-than> 
@@ -80,7 +80,7 @@
     <engine-2> 
       <name>engine low rpm</name>
       <mode>looped</mode>
-      <path>Aircraft/Arsenal-VG33/Sounds/spita.wav</path>
+      <path>Aircraft/MS-406/Sounds/rpm-low.wav</path>
       <condition> 
         <property>/engines/engine/running</property>
         <greater-than-equals> 
@@ -118,7 +118,7 @@
     <engine-4> 
       <name>engine high rpm</name>
       <mode>looped</mode>
-      <path>Aircraft/Arsenal-VG33/Sounds/merlin_rpm4.wav</path>
+      <path>Aircraft/MS-406/Sounds/rpm-high.wav</path>
       <condition> 
         <property>/engines/engine/running</property>
         <greater-than-equals> 
@@ -150,7 +150,7 @@
 
     <engine-0> 
       <name>engine shut down rpm</name>
-      <path>Aircraft/Arsenal-VG33/Sounds/merlin_shutdown.wav</path>
+      <path>Aircraft/MS-406/Sounds/shutdown.wav</path>
       <condition> 
         <property>/engines/engine/running</property>
         <not> 
@@ -200,7 +200,7 @@
     <gear> 
       <name>gear</name>
       <mode>in-transit</mode>
-      <path>Aircraft/Arsenal-VG33/Sounds/gear.wav</path>
+      <path>Aircraft/MS-406/Sounds/gear.wav</path>
       <property>/gear/gear[0]/position-norm</property>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -243,7 +243,7 @@
     <flap> 
       <name>flaps</name>
       <mode>in-transit</mode>
-      <path>Aircraft/Arsenal-VG33/Sounds/flaps.wav</path>
+      <path>Aircraft/MS-406/Sounds/flaps.wav</path>
       <property>/surface-positions/flap-pos-norm</property>
       <volume> 
         <factor>0.8</factor>
@@ -255,8 +255,8 @@
     <canopy> 
       <name>canopy slide</name>
       <mode>in-transit</mode>
-      <path>Aircraft/Arsenal-VG33/Sounds/canopy_slide.wav</path>
-      <property>gear/canopy/position-norm</property>
+      <path>Aircraft/MS-406/Sounds/canopy_slide.wav</path>
+      <property>/instrumentation/doors/crew/position-norm</property>
       <volume> 
         <factor>0.3</factor>
       </volume>
@@ -272,7 +272,7 @@
       <path>Sounds/wind.wav</path>
       <condition> 
         <equals> 
-          <property>gear/canopy/position-norm</property>
+          <property>/instrumentation/doors/crew/position-norm</property>
           <value>0</value>
         </equals>
       </condition>
@@ -305,7 +305,7 @@
       <path>Sounds/wind.wav</path>
       <condition> 
         <greater-than> 
-          <property>gear/canopy/position-norm</property>
+          <property>/instrumentation/doors/crew/position-norm</property>
           <value>0.01</value>
         </greater-than>
       </condition>
@@ -362,7 +362,7 @@
 
     <click> 
       <name>mag left click down</name>
-      <path>Aircraft/Arsenal-VG33/Sounds/click.wav</path>
+      <path>Aircraft/MS-406/Sounds/click.wav</path>
       <condition> 
         <property>controls/engines/engine/mag-switch-left</property>
       </condition>
@@ -373,7 +373,7 @@
 
     <click> 
       <name>mag left click up</name>
-      <path>Aircraft/Arsenal-VG33/Sounds/click.wav</path>
+      <path>Aircraft/MS-406/Sounds/click.wav</path>
       <condition> 
         <not> 
           <property>controls/engines/engine/mag-switch-left</property>
@@ -386,7 +386,7 @@
 
     <click> 
       <name>mag right click down</name>
-      <path>Aircraft/Arsenal-VG33/Sounds/click.wav</path>
+      <path>Aircraft/MS-406/Sounds/click.wav</path>
       <condition> 
         <property>controls/engines/engine/mag-switch-right</property>
       </condition>
@@ -397,7 +397,7 @@
 
     <click> 
       <name>mag right click up</name>
-      <path>Aircraft/Arsenal-VG33/Sounds/click.wav</path>
+      <path>Aircraft/MS-406/Sounds/click.wav</path>
       <condition> 
         <not> 
           <property>controls/engines/engine/mag-switch-right</property>
@@ -410,7 +410,7 @@
 
     <click> 
       <name>rgs main click down</name>
-      <path>Aircraft/Arsenal-VG33/Sounds/click.wav</path>
+      <path>Aircraft/MS-406/Sounds/click.wav</path>
       <condition> 
         <property>controls/switches/gun-sight-main</property>
       </condition>
@@ -421,7 +421,7 @@
 
     <click> 
       <name>rgs main click up</name>
-      <path>Aircraft/Arsenal-VG33/Sounds/click.wav</path>
+      <path>Aircraft/MS-406/Sounds/click.wav</path>
       <condition> 
         <not> 
           <property>controls/switches/gun-sight-main</property>
@@ -435,7 +435,7 @@
     <guns> 
       <name>gunfire</name>
       <mode>looped</mode>
-      <path>Aircraft/Arsenal-VG33/Sounds/gunfire_1.wav</path>
+      <path>Aircraft/MS-406/Sounds/gunfire_1.wav</path>
       <condition> 
         <property>controls/armament/trigger</property>
         <property>ai/submodels/submodel/count</property>
@@ -448,7 +448,7 @@
 
     <click> 
       <name>nav lights click down</name>
-      <path>Aircraft/Arsenal-VG33/Sounds/click.wav</path>
+      <path>Aircraft/MS-406/Sounds/click.wav</path>
       <condition> 
         <property>controls/lighting/nav-lights</property>
       </condition>
@@ -461,7 +461,7 @@
 
     <click> 
       <name>nav lights click up</name>
-      <path>Aircraft/Arsenal-VG33/Sounds/click.wav</path>
+      <path>Aircraft/MS-406/Sounds/click.wav</path>
       <condition> 
         <not> 
           <property>controls/lighting/nav-lights</property>

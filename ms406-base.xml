@@ -14,12 +14,6 @@
      <splash-texture>Aircraft/MS-406/ms406-splash.png</splash-texture>
     </startup>
 
-    <systems>
-      <electrical>
-        <path>Aircraft/j3cub/cub-electrical.xml</path>
-      </electrical>
-    </systems> 
-
     <sound>
       <path>Aircraft/MS-406/Sounds/ms406-sound.xml</path>
     </sound>

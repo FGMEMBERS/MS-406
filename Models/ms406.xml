@@ -26,6 +26,10 @@
     <object-name>bosses</object-name>
     <object-name>cockpit</object-name>
     <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
     <object-name>ailes2</object-name>
     <object-name>profondeurG</object-name>
     <object-name>profondeurD</object-name>
@@ -41,9 +45,8 @@
     <object-name>tourvitres</object-name>
     <object-name>tourcanopy</object-name>
     <object-name>profondeur</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
     <object-name>pate</object-name>
+    <object-name>viseur</object-name>
     <object-name>trous</object-name>
 
     <!-- Objets transparents -->
@@ -82,6 +85,10 @@
     <object-name>bosses</object-name>
     <object-name>cockpit</object-name>
     <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
     <object-name>ailes2</object-name>
     <object-name>profondeurG</object-name>
     <object-name>profondeurD</object-name>
@@ -97,9 +104,8 @@
     <object-name>tourvitres</object-name>
     <object-name>tourcanopy</object-name>
     <object-name>profondeur</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
     <object-name>pate</object-name>
+    <object-name>viseur</object-name>
     <object-name>trous</object-name>
 
     <property-base>sim/model/livery</property-base>
@@ -136,7 +142,7 @@
 -->
   </animation>
 
-  <!-- Une ombre pour OSG
+  <!-- Une ombre pour OSG -->
   <model>
     <name>shadowOSG</name>
     <path>Aircraft/MS-406/Models/shadow.xml</path>
@@ -151,7 +157,7 @@
         <value>true</value>
       </equals>
     </condition>
-  </animation> -->
+  </animation>
 
   <!-- Effets de tir -->
   <!-- Gauche extérieur -->
@@ -398,14 +404,14 @@
     <type>rotate</type>
     <object-name>voletG</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>-40.0</factor>
+    <factor> -40 </factor>
     <axis>
-      <x1-m> -0.686 </x1-m>
-      <y1-m> -0.625 </y1-m>
-      <z1-m> -0.531 </z1-m>
-      <x2-m> -0.832 </x2-m>
-      <y2-m> -2.492 </y2-m>
-      <z2-m> -0.303 </z2-m>
+      <x1-m> -0.563 </x1-m>
+      <y1-m> -0.445 </y1-m>
+      <z1-m> -0.427 </z1-m>
+      <x2-m> -0.919 </x2-m>
+      <y2-m> -2.923 </y2-m>
+      <z2-m> -0.115 </z2-m>
     </axis>
   </animation>
 
@@ -413,14 +419,14 @@
     <type>rotate</type>
     <object-name>voletD</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>-40.0</factor>
+    <factor> -40 </factor>
     <axis>
-      <x1-m> -0.832 </x1-m>
-      <y1-m>  2.492 </y1-m>
-      <z1-m> -0.303 </z1-m>
-      <x2-m> -0.686 </x2-m>
-      <y2-m>  0.625 </y2-m>
-      <z2-m> -0.531 </z2-m>
+      <x1-m> -0.919 </x1-m>
+      <y1-m>  2.923 </y1-m>
+      <z1-m> -0.115 </z1-m>
+      <x2-m> -0.563 </x2-m>
+      <y2-m>  0.445 </y2-m>
+      <z2-m> -0.427 </z2-m>
     </axis>
   </animation>
 
@@ -713,7 +719,7 @@
   <model>
     <path>Aircraft/MS-406/Models/light/StrobeWhite.xml</path>
     <offsets>
-      <x-m> -1.243 </x-m>
+      <x-m> -1.233 </x-m>
       <y-m> -5.280 </y-m>
       <z-m>  0.214 </z-m>
     </offsets>
@@ -722,7 +728,7 @@
   <model>
     <path>Aircraft/MS-406/Models/light/StrobeWhite.xml</path>
     <offsets>
-      <x-m> -1.243 </x-m>
+      <x-m> -1.233 </x-m>
       <y-m>  5.280 </y-m>
       <z-m>  0.214 </z-m>
     </offsets>

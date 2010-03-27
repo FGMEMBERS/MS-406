@@ -40,16 +40,15 @@
     </offsets>
   </model>
 
-  <!-- Planches de bord -->
-  <!-- Avant 
+  <!-- Planches de bord  -->
   <model>
-    <path>Aircraft/Arsenal-VG33/Models/Interior/Panel/panel.xml</path>
+    <path>Aircraft/MS-406/Models/Interior/Panel/panel.xml</path>
     <offsets>
-      <x-m> -0.856 </x-m>
+      <x-m> -0.734 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m>  0.223 </z-m>
+      <z-m>  0.584 </z-m>
     </offsets>
-  </model> -->
+  </model>
 
   <!-- Canopy -->
   <animation>
