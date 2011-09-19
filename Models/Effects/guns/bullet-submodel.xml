@@ -5,7 +5,7 @@
 
   <submodel>
     <name>bullet splash</name>
-    <model>Aircraft/Arsenal-VG33/Models/Effects/flack.xml</model>
+    <model>Aircraft/MS-406/Models/Effects/guns/explosion.xml</model>
     <speed>0</speed>
     <repeat>false</repeat>
     <delay>0</delay>

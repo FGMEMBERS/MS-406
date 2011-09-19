@@ -7,9 +7,23 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/MS-406/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -18,11 +32,8 @@
     <object-name>fuselage</object-name>
     <object-name>direction</object-name>
     <object-name>bol</object-name>
-    <object-name>echappement</object-name>
-    <object-name>helice</object-name>
     <object-name>priseair</object-name>
     <object-name>air</object-name>
-    <object-name>guns</object-name>
     <object-name>bosses</object-name>
     <object-name>cockpit</object-name>
     <object-name>ailes</object-name>
@@ -33,8 +44,18 @@
     <object-name>ailes2</object-name>
     <object-name>profondeurG</object-name>
     <object-name>profondeurD</object-name>
-    <object-name>canon</object-name>
     <object-name>porteG</object-name>
+    <object-name>tourvitres</object-name>
+    <object-name>tourcanopy</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>viseur</object-name>
+
+    <object-name>trous</object-name>
+    <object-name>pate</object-name>
+    <object-name>canon</object-name>
+    <object-name>guns</object-name>
+    <object-name>echappement</object-name>
+    <object-name>helice</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
@@ -42,30 +63,8 @@
     <object-name>axeBH</object-name>
     <object-name>axeBB</object-name>
     <object-name>roueD</object-name> 
-    <object-name>tourvitres</object-name>
-    <object-name>tourcanopy</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>pate</object-name>
-    <object-name>viseur</object-name>
-    <object-name>trous</object-name>
 
     <!-- Objets transparents -->
-    <object-name>vitres</object-name>
-    <object-name>canopy</object-name>
-    <object-name>propdisc</object-name>
-    <object-name>propblur</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>glass_shader.png</texture>
-    <object-name>vitres</object-name>
-    <object-name>canopy</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
     <object-name>vitres</object-name>
     <object-name>canopy</object-name>
     <object-name>propdisc</object-name>
@@ -77,11 +76,8 @@
     <object-name>fuselage</object-name>
     <object-name>direction</object-name>
     <object-name>bol</object-name>
-    <object-name>echappement</object-name>
-    <object-name>helice</object-name>
     <object-name>priseair</object-name>
     <object-name>air</object-name>
-    <object-name>guns</object-name>
     <object-name>bosses</object-name>
     <object-name>cockpit</object-name>
     <object-name>ailes</object-name>
@@ -92,8 +88,18 @@
     <object-name>ailes2</object-name>
     <object-name>profondeurG</object-name>
     <object-name>profondeurD</object-name>
-    <object-name>canon</object-name>
     <object-name>porteG</object-name>
+    <object-name>tourvitres</object-name>
+    <object-name>tourcanopy</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>viseur</object-name>
+
+    <object-name>trous</object-name>
+    <object-name>pate</object-name>
+    <object-name>canon</object-name>
+    <object-name>guns</object-name>
+    <object-name>echappement</object-name>
+    <object-name>helice</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
@@ -101,12 +107,6 @@
     <object-name>axeBH</object-name>
     <object-name>axeBB</object-name>
     <object-name>roueD</object-name> 
-    <object-name>tourvitres</object-name>
-    <object-name>tourcanopy</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>pate</object-name>
-    <object-name>viseur</object-name>
-    <object-name>trous</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
@@ -142,70 +142,140 @@
 -->
   </animation>
 
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>structure</object-name>
+    <object-name>aile</object-name>
+    <object-name>derive</object-name>
+    <object-name>direction</object-name>
+    <object-name>axeG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>cacheG</object-name>
+    <object-name>cacheD</object-name>
+    <object-name>tubeG</object-name>
+    <object-name>tubeD</object-name>
+    <object-name>articuleG</object-name>
+    <object-name>articuleD</object-name>
+  </effect>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitres</object-name>
+    <object-name>canopy</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitres</object-name>
+    <object-name>canopy</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </animation>
+
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/MS-406/Models/shadow.xml</path>
   </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>shadowOSG</object-name>
-    <condition>
-      <equals>
-        <property>sim[0]/rendering/shadows-ai</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
+  <!-- Cranking effects -->
+  <!-- Left -->
+  <model>
+    <path>Aircraft/D520/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.247 </x-m>
+      <y-m> -0.460 </y-m>
+      <z-m>  0.387 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/D520/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.045 </x-m>
+      <y-m> -0.460 </y-m>
+      <z-m>  0.387 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/D520/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -2.874 </x-m>
+      <y-m> -0.460 </y-m>
+      <z-m>  0.387 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/D520/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -2.678 </x-m>
+      <y-m> -0.460 </y-m>
+      <z-m>  0.387 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Right -->
+  <model>
+    <path>Aircraft/D520/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.247 </x-m>
+      <y-m>  0.460 </y-m>
+      <z-m>  0.387 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/D520/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.045 </x-m>
+      <y-m>  0.460 </y-m>
+      <z-m>  0.387 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/D520/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -2.874 </x-m>
+      <y-m>  0.460 </y-m>
+      <z-m>  0.387 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/D520/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -2.678 </x-m>
+      <y-m>  0.460 </y-m>
+      <z-m>  0.387 </z-m>
+    </offsets>
+  </model>
 
   <!-- Effets de tir -->
-  <!-- Gauche extérieur -->
+  <!-- Gauche -->
   <model>
-    <path>Aircraft/MS-406/Models/Effects/fire.xml</path>
+    <path>Aircraft/MS-406/Models/Effects/guns/fire.xml</path>
     <offsets>
-      <x-m> -1.956 </x-m>
-      <y-m> -2.428 </y-m>
-      <z-m> -0.219 </z-m>
+      <x-m> -2.471 </x-m>
+      <y-m> -1.883 </y-m>
+      <z-m> -0.118 </z-m>
       <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
-  <!-- Gauche intérieur -->
+  <!-- Droite -->
   <model>
-    <path>Aircraft/MS-406/Models/Effects/fire.xml</path>
+    <path>Aircraft/MS-406/Models/Effects/guns/fire.xml</path>
     <offsets>
-      <x-m> -1.985 </x-m>
-      <y-m> -2.308 </y-m>
-      <z-m> -0.225 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> 180 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
-  </model>
-
-  <!-- Droite extérieur -->
-  <model>
-    <path>Aircraft/MS-406/Models/Effects/fire.xml</path>
-    <offsets>
-      <x-m> -1.958 </x-m>
-      <y-m>  2.428 </y-m>
-      <z-m> -0.219 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> 180 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
-  </model>
-
-  <!-- Droite intérieur -->
-  <model>
-    <path>Aircraft/MS-406/Models/Effects/fire.xml</path>
-    <offsets>
-      <x-m> -1.985 </x-m>
-      <y-m>  2.308 </y-m>
-      <z-m> -0.225 </z-m>
+      <x-m> -2.471 </x-m>
+      <y-m>  1.883 </y-m>
+      <z-m> -0.118 </z-m>
       <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
       <heading-deg> 0 </heading-deg>
@@ -214,14 +284,45 @@
 
   <!-- Canon moteur -->
   <model>
-    <path>Aircraft/MS-406/Models/Effects/fire.xml</path>
+    <path>Aircraft/MS-406/Models/Effects/guns/fire.xml</path>
     <offsets>
-      <x-m> -4.030 </x-m>
+      <x-m> -4.036 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -0.043 </z-m>
+      <z-m>  0.398 </z-m>
       <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
       <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Effets sur le sol -->
+  <!-- Roue gauche -->
+  <model>
+    <path>Aircraft/MS-406/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m> -1.945 </x-m>
+      <y-m> -1.706 </y-m>
+      <z-m> -1.628 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/MS-406/Models/Effects/ground/ground2.xml</path>
+    <offsets>
+      <x-m> -1.945 </x-m>
+      <y-m>  1.706 </y-m>
+      <z-m> -1.628 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roulette de queue -->
+  <model>
+    <path>Aircraft/MS-406/Models/Effects/ground/ground0.xml</path>   
+    <offsets>
+      <x-m>  3.193 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.811 </z-m>
     </offsets>
   </model>
 
@@ -250,7 +351,7 @@
     <object-name>propdisc</object-name>
     <condition>
       <greater-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <value>900</value>
       </greater-than>
     </condition>
@@ -262,11 +363,11 @@
     <condition>
     <and>
       <greater-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <value>300.000</value>
       </greater-than>
       <less-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <value>900.001</value>
       </less-than>
     </and>
@@ -278,7 +379,7 @@
     <object-name>helice</object-name>
     <condition>
       <less-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
 	<value>900</value>
       </less-than>
     </condition>
@@ -287,7 +388,7 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
-    <property>/engines/engine[0]/rpm</property>
+    <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
       <x-m> -3.666 </x-m>
@@ -561,7 +662,7 @@
     </interpolation>
     <axis>
       <x> -0.037765 </x>
-      <y> -0.035791 </y>
+      <y>  0.035791 </y>
       <z> -0.251849 </z>
     </axis>
   </animation>

@@ -1,3 +1,3 @@
-aircraft.livery.init("Aircraft/Arsenal-VG33/Models/Liveries");
+aircraft.livery.init("Aircraft/MS-406/Models/Liveries");
 
 

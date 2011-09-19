@@ -4,7 +4,7 @@
 
   <default>
     <menu n="10">
-      <label>Arsenal VG 33</label>
+      <label>Morane-Saulnier MS.406</label>
       <enabled type="bool">true</enabled>
       <item>
         <label>Select Livery</label>
@@ -17,7 +17,7 @@
         <label>Immatriculation</label>
         <binding>
           <command>nasal</command>
-          <script>vg33.immat_dialog.toggle()</script>
+          <script>ms406.immat_dialog.toggle()</script>
         </binding>
       </item>
     </menu>
