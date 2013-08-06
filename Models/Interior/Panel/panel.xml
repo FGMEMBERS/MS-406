@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -11,13 +11,23 @@
     <!-- Objets transparents -->
   </animation>
 
-  <!-- ASI -->
+  <!-- AI -->
   <model>
-    <path>Aircraft/MS-406/Models/Interior/Panel/Instruments/airspeed/airspeed.xml</path>
+    <path>Aircraft/MS-406/Models/Interior/Panel/Instruments/ai/ai.xml</path>
     <offsets>
       <x-m> -0.069 </x-m>
-      <y-m>  0.062 </y-m>
-      <z-m> -0.020 </z-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.061 </z-m>
+    </offsets>
+  </model>
+
+  <!-- VION -->
+  <model>
+    <path>Aircraft/MS-406/Models/Interior/Panel/Instruments/vion/vion.xml</path>
+    <offsets>
+      <x-m> -0.067 </x-m>
+      <y-m>  0.060 </y-m>
+      <z-m> -0.024 </z-m>
     </offsets>
   </model>
 
@@ -31,13 +41,23 @@
     </offsets>
   </model>
 
-  <!-- VSI -->
+  <!-- CLOCK -->
   <model>
-    <path>Aircraft/MS-406/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <path>Aircraft/MS-406/Models/Interior/Panel/Instruments/clock/clock.xml</path>
     <offsets>
       <x-m> -0.069 </x-m>
       <y-m> -0.062 </y-m>
       <z-m> -0.020 </z-m>
+    </offsets>
+  </model>
+
+  <!-- COMPASS -->
+  <model>
+    <path>Aircraft/MS-406/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m> -0.065 </x-m>
+      <y-m> -0.082 </y-m>
+      <z-m>  0.058 </z-m>
     </offsets>
   </model>
 
